@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Contrato de Locação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Contrato de Locação de Imóvel</h1>
+        <form id="contract-form">
+            <div class="form-section">
+                <h2>Dados do Locador</h2>
+                <input type="text" id="locador" placeholder="Nome do Locador" required>
+                <input type="text" id="rg-locador" placeholder="RG do Locador" required>
+                <input type="text" id="cpf-locador" placeholder="CPF do Locador" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Dados do Locatário</h2>
+                <input type="text" id="locatario" placeholder="Nome do Locatário" required>
+                <input type="text" id="rg-locatario" placeholder="RG do Locatário" required>
+                <input type="text" id="cpf-locatario" placeholder="CPF do Locatário" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Dados Adicionais</h2>
+                <input type="number" id="calcao" placeholder="Valor do Calção (R$)" required>
+                <input type="text" id="testemunha1" placeholder="Nome da Testemunha 1" required>
+                <input type="text" id="testemunha2" placeholder="Nome da Testemunha 2" required>
+            </div>
+
+            <div class="form-section">
+                <h2>Dados do Imóvel e Locação</h2>
+                <input type="text" id="imovel" placeholder="Endereço do Imóvel" required>
+                <input type="number" id="valor" placeholder="Valor do Aluguel (R$)" required>
+                <input type="number" id="prazo" placeholder="Prazo de Locação (meses)" required>
+            </div>
+
+            <div class="button-group">
+                <button type="button" onclick="generateContract()">Gerar Contrato</button>
+                <button type="button" id="download-btn" onclick="downloadContract()" disabled>Baixar Contrato</button>
+            </div>
+        </form>
+
+        <div id="contract-preview" class="contract-preview">
+            <div class="watermark">Dr. Anderson de Paula</div>
+            <div id="contract-output"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
